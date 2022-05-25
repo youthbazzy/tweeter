@@ -24,8 +24,11 @@ body {
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
 
- main {
-   width: 90%;
-   align-content: center;
-   background-color: blue;
- }
+main {
+  margin: auto;
+  width: 90%;
+  border: 10px dotted black;
+  align-content: center;
+  justify-content: center;
+  background-color: orange;
+}
