@@ -4,7 +4,21 @@ header {
     display:flex;
     flex-direction: column;
     justify-content: center;
-    border-style: 10px dotted black;
+    align-items: center;
     background-color: orange;
-    background-image: url("60-lines.png");
+    border: 2px dotted black;
+    z-index: 0;
+    background-image: url('../../60-lines.png');
+    background-repeat: repeat;
+ }
+
+ .box   {
+     border: 2px dotted black;
+     align-items: center;
+     justify-content: center;
+ }
+
+ #name  {
+    font-family: 'Source Sans Pro', sans-serif;
+    color: white;
  }
