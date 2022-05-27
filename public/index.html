@@ -19,12 +19,14 @@
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/newtweet.css" type="text/css" />
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
+    
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
+    <script src="/scripts/composer-char-counter.js"></script>
   </head>
 
   <body>
@@ -49,7 +51,41 @@
 
     <!-- Page-specific (main) content here -->
     <main class="container">
-      <p>asdasd</p>
+      <section class="new-tweet">
+        <h2>Compose Tweet</h2>
+        <form method="POST" action="/tweets/" class='border'>
+          <div class="border body">
+            <label id='labeltext' for="tweet-text">What are you humming about?</label>
+            <textarea name="text" id="tweet-text"></textarea>
+          </div>
+          <div class="bottomrow">
+            <button class='tweetbtntext' type="submit">Tweet</button>
+            <output name="counter" class="counter" for="tweet-text">140</output>
+          </div>
+        </form>
+        <article class="tweet-container">
+          <header class="tweet-header">
+            <div>            
+              <!-- <img src=""> -->
+              <span>Newton</span>
+            </div>
+            <div>
+              <span>@sirIsaac</span>
+            </div>
+          </header>
+          <div class="tweet-body">
+            <span>Giants and stuff</span>
+          </div>
+          <footer class="tweet-footer">
+              <span>10 days ago</span>
+              <div class="tweet-icons">
+                <i class="fa-solid fa-flag"></i>
+                <i class="fa-solid fa-retweet"></i>
+                <i class="fa-solid fa-heart"></i>
+              </div>
+          </footer>
+        </article>
+      </section>
     </main>
   </body>
 </html>

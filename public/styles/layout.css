@@ -30,5 +30,37 @@ main {
   border: 10px dotted black;
   align-content: center;
   justify-content: center;
-  background-color: orange;
+  background-color: whitesmoke;
 }
+
+.tweet-container  {
+  border: 2px solid blue;
+  margin: 3%;
+}
+
+.tweet-header {
+  margin: 0 5%;
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.tweet-footer {
+  margin: 0 5%;
+  border-top: 2px solid brown;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+i:hover  {
+  color:orange;
+}
+
+.tweet-container:hover  {
+  box-shadow: 5px 10px #888888;
+}
+/* * {
+  
+  border: 2px solid black;
+} */

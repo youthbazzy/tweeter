@@ -1,8 +1,11 @@
 .navbar {
     height: 120px;
     /* width: ; */
-    background-color: #4056A1;
+    background-color: hsl(226, 43%, 44%);
     z-index: 2;
+    position: fixed;
+    top: 0;
+    width: 100%;
 }
 
 .headertext {
