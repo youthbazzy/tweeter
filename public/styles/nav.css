@@ -1,7 +1,7 @@
 .navbar {
     height: 120px;
     /* width: ; */
-    background-color: hsl(226, 43%, 44%);
+    background-color: none;
     z-index: 2;
     position: fixed;
     top: 0;
@@ -37,4 +37,18 @@
 
 .arrow  {
     color: orange;
+}
+
+@media only screen and (min-width: 1024px)   {
+    .navbar {
+        background-color: hsl(226, 43%, 44%);
+    }
+    .header {
+        width: 30%;
+        height: 450px;
+    }
+    #page-items   {
+        display: flex;
+        flex-direction: row;
+    }
 }

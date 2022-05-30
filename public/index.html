@@ -28,6 +28,8 @@
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
     <script src="/scripts/composer-char-counter.js"></script>
+
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
   </head>
 
   <body>
@@ -39,34 +41,35 @@
         <i class="fa-solid fa-angles-down arrow"></i>
     </div>
     </nav>
+      <div id="page-items">
+      <header class="header">
+        <div>
+            <img src="/images/profile-hex.png"> 
+        </div>
+        <br>
+        <div>
+            <h2 id="name" style="font-weight:300"><span style="font-weight:600">Bazil</span> Khan</h2>
+        </div>
+      </header> 
 
-    <header class="header">
-      <div>
-          <img src="/images/profile-hex.png"> 
-      </div>
-      <br>
-      <div>
-          <h2 id="name" style="font-weight:300"><span style="font-weight:600">Bazil</span> Khan</h2>
-      </div>
-    </header> 
-
-    <!-- Page-specific (main) content here -->
-    <main class="container">
-      <section class="new-tweet">
-        <h2>Compose Tweet</h2>
-        <form method="POST" action="/tweets/" class='border'>
-          <div class="border body">
-            <label id='labeltext' for="tweet-text">What are you humming about?</label>
-            <textarea name="text" id="tweet-text"></textarea>
-          </div>
-          <div class="bottomrow">
-            <button class='tweetbtntext' type="submit">Tweet</button>
-            <output name="counter" class="counter" for="tweet-text">140</output>
-          </div>
-        </form>
-        <section id="tweets-container">
+      <!-- Page-specific (main) content here -->
+      <main class="container">
+        <section class="new-tweet">
+          <h2>Compose Tweet</h2>
+          <form method="POST" action="/tweets/" class='border'>
+            <div class="border body">
+              <label id='labeltext' for="tweet-text">What are you humming about?</label>
+              <textarea name="text" id="tweet-text"></textarea>
+            </div>
+            <div class="bottomrow">
+              <button class='tweetbtntext' type="submit">Tweet</button>
+              <output name="counter" class="counter" for="tweet-text">140</output>
+            </div>
+          </form>
+          <section id="tweets-container">
+          </section>
         </section>
-      </section>
-    </main>
+      </main>
+    </div>
   </body>
 </html>
