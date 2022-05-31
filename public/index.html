@@ -40,36 +40,59 @@
         <span class="newtweet"><span style="font-weight:600;">Write</span> a new tweet</span>
         <i class="fa-solid fa-angles-down arrow"></i>
     </div>
-    </nav>
-      <div id="page-items">
-      <header class="header">
-        <div>
-            <img src="/images/profile-hex.png"> 
-        </div>
-        <br>
-        <div>
-            <h2 id="name" style="font-weight:300"><span style="font-weight:600">Bazil</span> Khan</h2>
-        </div>
-      </header> 
+      </nav>
+        <div id="page-items">
+        <header class="header">
+          <div>
+              <img src="/images/profile-hex.png"> 
+          </div>
+          <br>
+          <div>
+              <h2 id="name" style="font-weight:300"><span style="font-weight:600">Bazil</span> Khan</h2>
+          </div>
+        </header> 
 
-      <!-- Page-specific (main) content here -->
-      <main class="container">
-        <section class="new-tweet">
-          <h2>Compose Tweet</h2>
-          <form method="POST" action="/tweets/" class='border'>
-            <div class="border body">
-              <label id='labeltext' for="tweet-text">What are you humming about?</label>
-              <textarea name="text" id="tweet-text"></textarea>
-            </div>
-            <div class="bottomrow">
-              <button class='tweetbtntext' type="submit">Tweet</button>
-              <output name="counter" class="counter" for="tweet-text">140</output>
-            </div>
-          </form>
-          <section id="tweets-container">
+        <!-- Page-specific (main) content here -->
+        <main class="container">
+          <section class="new-tweet">
+            <!-- <h2>Compose Tweet</h2> -->
+            <div id='error-box'></div>
+            <form method="POST" action="/tweets/">
+              <div class="border body">
+                <label id='labeltext' for="tweet-text">What are you humming about?</label>
+                <textarea name="text" id="tweet-text"></textarea>
+              </div>
+              <div class="bottomrow">
+                <button class='tweetbtntext' type="submit">Tweet</button>
+                <output name="counter" class="counter" for="tweet-text">140</output>
+              </div>
+            </form>
+            <section id="tweets-container">
+              <article class="tweet-container">
+                <header class="tweet-header">
+                  <div>            
+                    <i class="fa-solid fa-flag"></i>
+                    <span>bazilkhan</span>
+                  </div>
+                  <div class="handle">
+                    <span>@bananaapplae</span>
+                  </div>
+                </header>
+                <div class="tweet-body">
+                  <span>I was here today Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, dolorum?</span>
+                </div>
+                <footer class="tweet-footer">
+                    <span>10 days ago</span>
+                    <div class="tweet-icons">
+                      <i class="fa-solid fa-flag"></i>
+                      <i class="fa-solid fa-retweet"></i>
+                      <i class="fa-solid fa-heart"></i>
+                    </div>
+                </footer>
+            </article>
+            </section>
           </section>
-        </section>
-      </main>
-    </div>
+        </main>
+      </div>
   </body>
 </html>

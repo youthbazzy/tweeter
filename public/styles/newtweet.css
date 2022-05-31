@@ -17,7 +17,8 @@
 /* * { border: 1px solid black; } */
 
 .container {
-  border: 2px solid red;
+  /* border: 2px solid; */
+  padding: 50px;
 }
 
 .bottomrow  {
@@ -33,4 +34,9 @@
 .body {
   display:flex;
   flex-direction: column;
+}
+
+#tweet-text {
+  outline: none;
+  resize: none;
 }
