@@ -1,7 +1,7 @@
 function updateCountdown()  {
   let val = $('#tweet-text').val().length;
-  let remain = 140 - val
-  if(remain < 0)  {
+  let remain = 140 - val;
+  if (remain < 0)  {
     $(".counter").css('color', 'red');
   }
   $(".counter").text(remain);

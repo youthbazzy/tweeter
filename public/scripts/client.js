@@ -8,10 +8,10 @@
 
 // function for creating new tweet element
 const createTweetElement = function(tweetObj) {
-  console.log(tweetObj)
+  console.log(tweetObj);
 
-  let time = timeago.format(tweetObj.created_at); 
-  console.log(time)
+  let time = timeago.format(tweetObj.created_at);
+  console.log(time);
   const $tweet = $(`<article class="tweet-container">
     <header class="tweet-header">
       <div>            
@@ -35,59 +35,60 @@ const createTweetElement = function(tweetObj) {
     </footer>
 </article>`);
   return $tweet;
-}
+};
 
 // render all tweets on page
 const renderTweets = function(objArr) {
-  $('#tweets-container').empty()
+  $('#tweets-container').empty();
   for (let obj in objArr) {
-    let $tweet = createTweetElement(objArr[obj])
+    let $tweet = createTweetElement(objArr[obj]);
     $('#tweets-container').append($tweet);
   }
-}
+};
 
 // get tweets to render
 const loadTweets = function() {
   $.ajax('/tweets/', { method: 'GET' })
-    .then(function (tweets) {
-      renderTweets(tweets)
-    })};
+    .then(function(tweets) {
+      renderTweets(tweets);
+    });
+};
   // $.get("/tweets")
 
 
-$(document).ready(function()  {  
+$(document).ready(function()  {
   loadTweets();
 
   // operations to perform when submitted
   $("form").submit(function(event) {
     // Stop the form from submitting and loading a new page.
     event.preventDefault();
-    console.log($(this))
+    console.log($(this));
     
     // if the error message was produced previous to submission, remove it.
-    if($('#error-box')) {
-      $('.error').remove()
+    if ($('#error-box')) {
+      $('.error').remove();
     }
 
-    let tweetData = $(this).serialize()
-    let tweetInfo = tweetData.substring(5)
+    let tweetData = $(this).serialize();
+    let tweetInfo = tweetData.substring(5);
     let errorPresent = false;
 
     // if no input in textarea
-    if(tweetInfo == '') {
+    if (tweetInfo == '') {
       errorPresent = true;
-      let $error = $("<h3 class='error'>please type tweet</h3>") 
+      let $error = $("<h3 class='error'>please type tweet</h3>");
       $('#error-box').append($error);
     }
     // if tweet is longer than max 140 characters
-    if(tweetInfo.length > 140)  {
+    if (tweetInfo.length > 140)  {
       errorPresent = true;
-      let $error = $("<h3 class='error'>tweet too long</h3>") 
+      let $error = $("<h3 class='error'>tweet too long</h3>");
       $('#error-box').append($error);
-    } 
+    }
     
     // if no errors produced
-    if(!(errorPresent))  {
+    if (!(errorPresent))  {
 
       let newTweet = {
         "user": {
@@ -99,10 +100,10 @@ $(document).ready(function()  {
           "text": tweetData.substring(5)
         },
         "created_at": 1653703458814
-      }
+      };
 
-      $.post("/tweets/", tweetData, function(data, status){
-        $('#tweet-text').val('')
+      $.post("/tweets/", tweetData, function(data, status) {
+        $('#tweet-text').val('');
         loadTweets();
       });
     }
