@@ -3,7 +3,7 @@ function updateCountdown()  {
   let remain = 140 - val;
   if (remain < 0)  {
     $(".counter").css('color', 'red');
-  }
+  } else
   $(".counter").text(remain);
 }
 
@@ -14,9 +14,7 @@ jQuery(document).ready(function($) {
 });
 
 $("#tweet-text").on('input', function() {
-  console.log(this);
   let $this = $(this);
-  let maxLength = parseInt($this.attr('maxlength'));
   $this.attr('maxlength', null);
   
 });
