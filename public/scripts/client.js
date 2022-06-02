@@ -12,28 +12,29 @@ const createTweetElement = function(tweetObj) {
 
   let time = timeago.format(tweetObj.created_at);
   console.log(time);
-  const $tweet = $(`<article class="tweet-container">
-    <header class="tweet-header">
-      <div>            
-        <i class="fa-solid fa-flag"></i>
-        <span>${tweetObj.user.name}</span>
-      </div>
-      <div>
-        <span class="handle">${tweetObj.user.handle}</span>
-      </div>
-    </header>
-    <div class="tweet-body">
-      <span>${tweetObj.content.text}</span>
-    </div>
-    <footer class="tweet-footer">
-        <span>${time}</span>
-        <div class="tweet-icons">
+  const $tweet = $(`
+    <article class="tweet-container">
+      <header class="tweet-header">
+        <div>            
           <i class="fa-solid fa-flag"></i>
-          <i class="fa-solid fa-retweet"></i>
-          <i class="fa-solid fa-heart"></i>
+          <span>${tweetObj.user.name}</span>
         </div>
-    </footer>
-</article>`);
+        <div>
+          <span class="handle">${tweetObj.user.handle}</span>
+        </div>
+      </header>
+      <div class="tweet-body">
+        <span>${tweetObj.content.text}</span>
+      </div>
+      <footer class="tweet-footer">
+          <span>${time}</span>
+          <div class="tweet-icons">
+            <i class="fa-solid fa-flag"></i>
+            <i class="fa-solid fa-retweet"></i>
+            <i class="fa-solid fa-heart"></i>
+          </div>
+      </footer>
+    </article>`);
   return $tweet;
 };
 
@@ -51,7 +52,8 @@ const loadTweets = function() {
   $.ajax('/tweets/', { method: 'GET' })
     .then(function(tweets) {
       renderTweets(tweets);
-    });
+    })
+    .catch('error');
 };
   // $.get("/tweets")
 
@@ -89,7 +91,7 @@ $(document).ready(function()  {
     
     // if no errors produced
     if (!(errorPresent))  {
-
+      updateCountdown()
       let newTweet = {
         "user": {
           "name": "Me",
