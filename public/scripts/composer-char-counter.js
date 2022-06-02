@@ -1,9 +1,13 @@
+let remain;
 function updateCountdown()  {
+  console.log('update countdown')
   let val = $('#tweet-text').val().length;
-  let remain = 140 - val;
+  remain = 140 - val;
   if (remain < 0)  {
     $(".counter").css('color', 'red');
-  } else
+  } else  {
+    $(".counter").css('color', 'black');
+  }
   $(".counter").text(remain);
 }
 
@@ -16,5 +20,4 @@ jQuery(document).ready(function($) {
 $("#tweet-text").on('input', function() {
   let $this = $(this);
   $this.attr('maxlength', null);
-  
 });

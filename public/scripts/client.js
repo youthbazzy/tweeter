@@ -53,10 +53,8 @@ const loadTweets = function() {
     .then(function(tweets) {
       renderTweets(tweets);
     })
-    .catch('error');
+    .catch(function(err)  { console.error(err) });
 };
-  // $.get("/tweets")
-
 
 $(document).ready(function()  {
   loadTweets();
@@ -79,19 +77,18 @@ $(document).ready(function()  {
     // if no input in textarea
     if (tweetInfo == '') {
       errorPresent = true;
-      let $error = $("<h3 class='error'>please type tweet</h3>");
+      let $error = $("<h3 class='error'>Error: please type tweet</h3>");
       $('#error-box').append($error);
     }
     // if tweet is longer than max 140 characters
     if (tweetInfo.length > 140)  {
       errorPresent = true;
-      let $error = $("<h3 class='error'>tweet too long</h3>");
+      let $error = $("<h3 class='error'>Error: tweet too long</h3>");
       $('#error-box').append($error);
     }
     
     // if no errors produced
     if (!(errorPresent))  {
-      updateCountdown()
       let newTweet = {
         "user": {
           "name": "Me",
@@ -106,6 +103,7 @@ $(document).ready(function()  {
 
       $.post("/tweets/", tweetData, function(data, status) {
         $('#tweet-text').val('');
+        updateCountdown()
         loadTweets();
       });
     }
